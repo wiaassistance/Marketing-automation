@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wafa IMA Assistance | Parcours email automatisé</title>
+<style>
+:root{
+ --ink:#18334a;--muted:#6d8090;--line:#dce5eb;--canvas:#eef3f6;
+ --c1:#3976a8;--c2:#4c8c83;--c3:#b18443;--c4:#6e72a8;--c5:#478b70;--c6:#71869a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--canvas);font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+body{padding:24px}
+.sheet{width:1850px;height:900px;margin:0 auto;background:#fff;position:relative;overflow:hidden;padding:52px 48px 36px;box-shadow:0 18px 55px rgba(25,49,68,.10)}
+.topline{height:5px;position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6))}
+
+
+
+
+
+
+
+
+.intro{height:165px;display:flex;align-items:center;justify-content:space-between}
+h1{font-size:36px;letter-spacing:-1.25px;line-height:1.12;margin:0;font-weight:800;color:var(--ink)}
+.intro p{margin:11px 0 0;color:var(--muted);font-size:15px}
+.intro-aside{width:300px;padding:8px 0 8px 17px;border-left:3px solid #91a8b8;color:#718493;font-size:12px;line-height:1.6}
+.flow{height:650px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px}
+.step{min-width:0;position:relative;padding:0 1px}
+.step-head{height:150px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.step-head:after{content:"";position:absolute;top:43px;left:calc(50% + 47px);width:calc(100% - 81px);height:1px;background:#dce5eb}
+.step:last-child .step-head:after{display:none}
+.orb{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;position:relative;z-index:1;box-shadow:0 7px 18px rgba(26,54,75,.13);border:5px solid #fff;outline:1px solid #e4ebef}
+.orb .num{font-size:10px;font-weight:800;letter-spacing:1px;opacity:.85}
+.orb .symbol{font-size:25px;font-weight:600;line-height:1.2;margin-top:1px}
+.s1 .orb{background:var(--c1)}.s2 .orb{background:var(--c2)}.s3 .orb{background:var(--c3)}
+.s4 .orb{background:var(--c4)}.s5 .orb{background:var(--c5)}.s6 .orb{background:var(--c6)}
+.step-title{font-size:17px;font-weight:800;margin-top:8px;letter-spacing:-.25px}
+.step-desc{font-size:10px;color:var(--muted);margin-top:4px}
+.email-list{border-top:1px solid var(--line);padding-top:12px}
+.email{background:#fff;border:1px solid #e3eaf0;border-radius:10px;padding:11px 12px;margin-bottom:9px;min-height:93px;box-shadow:0 3px 10px rgba(25,49,68,.035);position:relative}
+.email:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 3px 3px 0;background:#9aafbd}
+.s1 .email:before{background:var(--c1)}.s2 .email:before{background:var(--c2)}.s3 .email:before{background:var(--c3)}
+.s4 .email:before{background:var(--c4)}.s5 .email:before{background:var(--c5)}.s6 .email:before{background:var(--c6)}
+.ref{font-size:9px;letter-spacing:.7px;font-weight:850;color:#71899a;margin-left:3px;margin-bottom:6px;text-transform:uppercase}
+.email-title{font-size:12px;line-height:1.25;font-weight:750;color:#203e55;margin-left:3px;min-height:29px}
+.trigger{font-size:10px;line-height:1.3;color:#667c8c;margin:7px 0 0 3px;display:flex;gap:6px;align-items:flex-start}
+.trigger:before{content:"";width:6px;height:6px;flex:none;border-radius:50%;background:#94a9b7;margin-top:3px}
+.trigger.ok:before{background:#57937c}.trigger.timed:before{background:#b38b4d}
+
+
+
+
+
+
+
+
+@media print{@page{size:1850px 900px;margin:0}html,body{width:1850px;height:900px;background:#fff}body{padding:0}.sheet{margin:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="topline"></div>
+<section class="intro">
+ <div>
+  <h1>Un email à chaque étape de votre parcours</h1>
+  <p>La chronologie des communications automatisées tout au long du parcours client.</p>
+ </div>
+</section>
+<main class="flow">
+ <section class="step s1"><div class="step-head"><div class="orb"><span class="num">01</span><span class="symbol">⌕</span></div><div class="step-title">Simulation</div><div class="step-desc">Génération du devis</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-D</div><div class="email-title">Envoi du devis</div><div class="trigger">Après génération du devis</div></article>
+ </div></section>
+ <section class="step s2"><div class="step-head"><div class="orb"><span class="num">02</span><span class="symbol">✓</span></div><div class="step-title">Souscription</div><div class="step-desc">Finalisation ou interruption</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-S</div><div class="email-title">Souscription finalisée</div><div class="trigger ok">À la finalisation</div></article>
+  <article class="email"><div class="ref">MAIL N°2-S</div><div class="email-title">Souscription interrompue</div><div class="trigger timed">20 min après le clic sur « Souscrire » — uniquement si le client n’est pas passé à l’étape du paiement</div></article>
+ </div></section>
+ <section class="step s3"><div class="step-head"><div class="orb"><span class="num">03</span><span class="symbol">€</span></div><div class="step-title">Paiement</div><div class="step-desc">Carte bancaire ou cash</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-P</div><div class="email-title">Paiement carte en attente</div><div class="trigger timed">Après initiation, si non finalisé</div></article>
+  <article class="email"><div class="ref">MAIL N°2-P</div><div class="email-title">Rappel paiement cash</div><div class="trigger timed">24 h après souscription</div></article>
+  <article class="email"><div class="ref">MAIL N°3-P</div><div class="email-title">Paiement carte finalisé</div><div class="trigger ok">À validation du paiement</div></article>
+  <article class="email"><div class="ref">MAIL N°4-P</div><div class="email-title">Paiement cash finalisé</div><div class="trigger ok">Après paiement effectué en agence</div></article>
+ </div></section>
+ <section class="step s4"><div class="step-head"><div class="orb"><span class="num">04</span><span class="symbol">✎</span></div><div class="step-title">Signature</div><div class="step-desc">Signature électronique</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-SG</div><div class="email-title">Contrat à signer</div><div class="trigger timed">5 min après paiement</div></article>
+  <article class="email"><div class="ref">MAIL N°2-SG</div><div class="email-title">Contrat non signé</div><div class="trigger timed">10 min après paiement, si le contrat n’est pas signé</div></article>
+ </div></section>
+ <section class="step s5"><div class="step-head"><div class="orb"><span class="num">05</span><span class="symbol">▤</span></div><div class="step-title">Attestation</div><div class="step-desc">Contrat signé</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-A</div><div class="email-title">Confirmation du contrat signé</div><div class="trigger ok">À la signature finalisée</div></article>
+  <article class="email"><div class="ref">MAIL N°2-A</div><div class="email-title">Attestations multilingues</div><div class="trigger ok">À la signature finalisée</div></article>
+ </div></section>
+ <section class="step s6"><div class="step-head"><div class="orb"><span class="num">06</span><span class="symbol">↻</span></div><div class="step-title">Suivi client</div><div class="step-desc">Relance & satisfaction</div></div><div class="email-list">
+  <article class="email"><div class="ref">MAIL N°1-R · RELANCE 1</div><div class="email-title">Reprise de souscription</div><div class="trigger timed">24 h après le début de la souscription</div></article>
+  <article class="email"><div class="ref">MAIL N°1-R · RELANCE 2</div><div class="email-title">Seconde relance de souscription</div><div class="trigger timed">48 h après le début de la souscription</div></article>
+  <article class="email"><div class="ref">MAIL N°1-R · ÉVALUATION</div><div class="email-title">Évaluation de l’expérience</div><div class="trigger">48 h après finalisation</div></article>
+ </div></section>
+</main>
+</div>
+</body>
+</html>
